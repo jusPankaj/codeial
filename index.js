@@ -8,6 +8,11 @@ app.use(expressLayouts);
 
 app.use('/', require('./routes'));
 
+const db = require('./config/mongoose')
+
+//extracts style and scripts from sub pages into the layout
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 //setting view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
