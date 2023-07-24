@@ -5,6 +5,12 @@ const port= 8080;
 const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
 
+//use of cookie-parser to store cookies
+const cookieParser = require('cookie-parser');
+app.use(express.urlencoded());
+app.use(cookieParser());
+
+
 app.use(express.static('./assets/'));
 
 
